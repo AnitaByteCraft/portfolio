@@ -16,7 +16,7 @@ A simple **portfolio website** built with **Flask, HTML, CSS, and JavaScript** f
 ## ⚙️ Setup & Run
 1. Clone this repo:
    ```bash
-   git clone https://github.com/your-username/task-06-portfolio.git
+   git clone https://github.com/AnitaByteCraft/portfolio.git
    cd task-06-portfolio
 
 ## Install Flask:
