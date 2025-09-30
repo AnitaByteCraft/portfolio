@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Home - My Portfolio{% endblock %}
+{% block content %}
+  <div class="home-container">
+    <h1>Hi — I'm Anita 👋</h1>
+    <p>I’m a BCA Student, passionate about building web applications, analyzing data, and solving real-world problems.</p>
+
+    <h2>Projects</h2>
+    {% if projects %}
+      <ul class="projects-list">
+        {% for p in projects %}
+          <li class="project-item">
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.description }}</p>
+            <a href="{{ p.link }}" target="_blank">🔗 View Project</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No projects added yet. Check back soon!</p>
+    {% endif %}
+  </div>
+{% endblock %}

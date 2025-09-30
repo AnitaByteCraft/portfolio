@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}My Portfolio{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a> |
+      <a href="{{ url_for('about') }}">About</a> |
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for m in messages %}
+            <li>{{ m }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>© {{ current_year }} AnitaByteCraft</p>
+  </footer>
+</body>
+</html>
